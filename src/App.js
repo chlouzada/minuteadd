@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useEffect, useState } from "react";
+import moment from "moment";
 
 function App() {
+  const [date, setDate] = useState("");
+  const [minutos, setMinutos] = useState("");
+
+  useEffect(() => {
+    setDate(moment().add(minutos, "minutes").format("HH:mm"));
+  }, [minutos]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="wrapper">
+        <div className="hora">{date}</div>
+        <div class="group">
+          <input
+            type="text"
+            required
+            onChange={(event) => setMinutos(event.target.value)}
+            value={minutos}
+          />
+          <span class="bar"></span>
+          <label>Minutos</label>
+        </div>
+      </div>
     </div>
   );
 }

@@ -19,14 +19,38 @@
 }
 
 .wrapper:hover {
+  width: 80px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
+@media screen and (max-width: 900px) {
+  .wrapper {
+    width:80%;
+  }  
+}
+
 .hora {
+  padding-left: 12px;
   font-family: "Poppins", sans-serif;
-  width: 100%;
+  color: #1e7e34 ;
   text-align: center;
-  font-size: 48px;
+  font-size: 40px;
+}
+
+.time {
+  color:#1b2652;
+  text-align: center;
+
+}
+
+.hora-custom {
+  padding-right: 12px;
+  font-family: "Poppins", sans-serif;
+  color:#1b2652;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
 }
 
 .group {
